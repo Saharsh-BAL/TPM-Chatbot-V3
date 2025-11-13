@@ -14,12 +14,12 @@
   font-weight: 600;
   font-size: 14px;
   line-height: 20px;
-  color: #ffffff;
+  color: #000000;
 }
 
 .shareButtonRoot i,
 .shareButtonRoot:hover i {
-  color: #ffffff !important;
+  color: #000000 !important;
 }
 
 .historyButtonRoot {

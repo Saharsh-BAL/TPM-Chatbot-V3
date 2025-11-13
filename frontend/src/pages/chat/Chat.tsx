@@ -1,6 +1,6 @@
 import { useRef, useState, useEffect, useContext, useLayoutEffect } from 'react'
 import { CommandBarButton, IconButton, Dialog, DialogType, Stack } from '@fluentui/react'
-import { SquareRegular, ShieldLockRegular, ErrorCircleRegular } from '@fluentui/react-icons'
+import { bundleIcon, BroomFilled, BroomRegular, SquareRegular, ShieldLockRegular, ErrorCircleRegular } from '@fluentui/react-icons';
 
 import ReactMarkdown from 'react-markdown'
 import remarkGfm from 'remark-gfm'
@@ -65,6 +65,8 @@ const Chat = () => {
   const [errorMsg, setErrorMsg] = useState<ErrorMessage | null>()
   const [logo, setLogo] = useState('')
   const [answerId, setAnswerId] = useState<string>('')
+  const Broom = bundleIcon(BroomFilled, BroomRegular);
+
 
   const errorDialogContentProps = {
     type: DialogType.close,
@@ -916,7 +918,11 @@ const Chat = () => {
                       ? styles.clearChatBroom
                       : styles.clearChatBroomNoCosmos
                   }
-                  iconProps={{ iconName: 'Broom' }}
+                  // text='Clear'
+                  // iconProps={{ iconName: 'Broom' }}
+                  iconProps={{ iconName: undefined }}
+                  onRenderIcon={() => <Broom />} 
+                  // iconProps={{ iconName:"clearChatBroom fa fa-broom" }}
                   onClick={
                     appStateContext?.state.isCosmosDBAvailable?.status !== CosmosDBStatus.NotConfigured
                       ? clearChat

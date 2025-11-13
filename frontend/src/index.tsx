@@ -2,12 +2,13 @@ import React from 'react'
 import ReactDOM from 'react-dom/client'
 import { HashRouter, Route, Routes } from 'react-router-dom'
 import { initializeIcons } from '@fluentui/react'
+// import { initializeIcons } from '@fluentui/font-icons-mdl2'
+
 
 import Chat from './pages/chat/Chat'
 import Layout from './pages/layout/Layout'
 import NoPage from './pages/NoPage'
 import { AppStateProvider } from './state/AppProvider'
-
 import './index.css'
 
 initializeIcons()
